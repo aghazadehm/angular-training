@@ -1,3 +1,5 @@
-<h1>This text located at app component.</h1>
+<p>This text located at app component.</p>
 
 <app-courses></app-courses>
+
+<app-favorite [is-favorite]="post.isFavorite" (change)="onFavoriteChanged($event)"></app-favorite>
