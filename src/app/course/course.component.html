@@ -1,0 +1,14 @@
+<p>{{ title }}!</p>
+<img [src]="imageUrl" />
+<table border="2" >
+    <tr>
+        <td>1st col</td>
+        <td [attr.colspan]="colspan">2nd+3rd col</td>
+        <td>4th col</td>
+    </tr>
+    <tr>
+        <td [attr.colspan]="colspan">1st+2nd col</td>
+        <td>3rd col</td>
+        <td>4th col</td>
+    </tr>
+</table>

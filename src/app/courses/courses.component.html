@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div class="row">
+        <h2>This text located at courses component </h2>
+        <ul>
+            <li *ngFor="let course of courses">
+                {{course}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p>Class binding</p>
+            <button type="button" class="btn btn-primary" [class.active]="isActive">Save</button>
+        </div>
+
+        <div class="col-md-6">
+            <p>Style binding</p>
+            <button type="button" class="btn btn-danger"
+                [style.backgroundColor]="isActive ? 'green' : 'white'">Close</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p> Event binding</p>
+            <button type="button" class="btn btn-warning" (click)="onClick()">Warning</button>
+        </div>
+
+        <div (click)="onDivClicked()" class="col-md-6">
+            <p>Event bubbling</p>
+            <button type="button" class="btn btn-dark" (click)="onMove($event)">Mouse Move Event</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p>Template variable</p>
+            <input #email (keyup.enter)="onChange(email.value)" />
+        </div>
+
+        <div class="col-md-6">
+            <p> Two way binding </p>
+            <input [(ngModel)]="name" (keyup.enter)="onKeyUp()" />
+            <p> {{name}} </p>
+        </div>
+    </div>
+
+    <app-course></app-course>
+</div>
